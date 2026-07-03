@@ -1,0 +1,39 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ===== Node / Frontend =====
+node_modules/
+dist/
+.vite/
+*.local
+
+# ===== 環境變數 / 機密 =====
+.env
+.env.*
+!.env.example
+
+# ===== 編輯器 / 作業系統 =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ===== AlgoForge 執行期資料（保留結構，不追蹤快取）=====
+backend/.cache/
+*.log
+
+# index.json 是從 data/problems/ 的筆記衍生重建的快取，不追蹤以避免手動/自動 commit 互相衝突
+data/index.json
+
+# ===== 公開化：個人解題資料不進公開 repo（引擎才是公開的工具）=====
+# 你的每日解題分析留本機；對外展示用 examples/ 裡的精選範例
+data/problems/*.md
+!data/problems/.gitkeep

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AlgoForge — 解題儀表板</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">AlgoForge <span class="flame">🔥</span></div>
+  <div class="tagline">Forge your algorithmic intuition, one problem a day.</div>
+  <button id="showStats" class="btn btn-ghost">📊 統計</button>
+  <button id="showReview" class="btn btn-ghost">🔁 複習</button>
+  <button id="fetchDaily" class="btn">抓今日題</button>
+</header>
+
+<main class="layout">
+  <!-- 左欄：統計 + 題目清單 -->
+  <aside class="sidebar">
+    <section class="stats" id="stats"></section>
+
+    <div class="filter-bar">
+      <input type="text" id="search" placeholder="搜尋題號 / 標題…" />
+      <div class="chips" id="patternChips"></div>
+    </div>
+
+    <ul class="problem-list" id="problemList"></ul>
+  </aside>
+
+  <!-- 右欄：題目筆記 -->
+  <section class="reader" id="reader">
+    <div class="empty-state">
+      <div class="big">🗂️</div>
+      <p>左側選一題，看完整解題分析。</p>
+      <p class="muted">分析由 <code>@algoforge-coach</code> 產出：切入框架 · 核心觀念 · Java/C++ 解法 · 複雜度逐步推導 · 模式歸納。</p>
+    </div>
+  </section>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
