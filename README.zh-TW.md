@@ -9,7 +9,7 @@ AlgoForge 會抓 LeetCode 每日一題（或你指定的任何題），由一個
 
 ![AlgoForge 儀表板 —— 左側題庫清單與模式標籤，右側是渲染後的教學式分析與時間／空間複雜度膠囊](./docs/dashboard.png)
 
-> 📄 實際產出見 [`examples/`](./examples)：例如 [Two Sum](./examples/1-two-sum.md)。
+> 📄 實際產出見 [`examples/`](./examples)：例如 [Two Sum](./examples/1-two-sum.md)，或看 [GCD of Odd and Even Sums](./examples/3658-gcd-of-odd-and-even-sums.md) 展示第 9 段「社群解法對照」實際效果。
 
 ## 為什麼不一樣
 

@@ -9,7 +9,7 @@ AlgoForge fetches the LeetCode daily problem (or any problem you pick), and a Cl
 
 ![AlgoForge dashboard — problem list with pattern tags on the left, and a rendered teaching analysis with time/space complexity pills on the right](./docs/dashboard.png)
 
-> 📄 See real output in [`examples/`](./examples) — e.g. [Two Sum](./examples/1-two-sum.md).
+> 📄 See real output in [`examples/`](./examples) — e.g. [Two Sum](./examples/1-two-sum.md), or [GCD of Odd and Even Sums](./examples/3658-gcd-of-odd-and-even-sums.md) for the community solution comparison section in action.
 
 ## Why it's different
 
