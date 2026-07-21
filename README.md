@@ -32,7 +32,7 @@ LeetCode GraphQL ──► Backend (Python / FastAPI) ──► Markdown notes +
 ```
 
 - **Backend** — FastAPI proxies LeetCode GraphQL (avoids CORS), saves problems as Markdown stubs
-- **Coach agent** — Claude Code fills in the 8-section teaching analysis
+- **Coach agent** — Claude Code fills in the 9-section teaching analysis (including an optional community solution comparison)
 - **Dashboard** — problem list, pattern filter, note rendering, complexity pills, stats & spaced-review queue
 - **Knowledge export** — turns solved problems into an Obsidian wiki (problem ↔ pattern backlinks)
 
@@ -45,10 +45,11 @@ AlgoForge/
 │   ├── htmlmd.py       #   HTML → Markdown
 │   ├── storage.py      #   stub storage + index sync + stats/review
 │   ├── obsidian.py     #   export to an Obsidian knowledge base
+│   ├── solutions.py    #   fetch top-voted community solutions (coach reference material)
 │   ├── main.py         #   REST API + serves the frontend
-│   └── cli.py          #   command-line fetch / export
+│   └── cli.py          #   command-line fetch / export / community solutions
 ├── frontend/           # web dashboard (no build step)
-├── templates/          # the 8-section note template
+├── templates/          # the 9-section note template
 ├── examples/           # a curated sample analysis (Two Sum)
 ├── .claude/agents/     # the algoforge-coach agent ⭐
 └── data/problems/      # your own analyses (gitignored)
@@ -76,10 +77,13 @@ Open <http://127.0.0.1:8642/> for the dashboard. Use the `algoforge-coach` agent
 | `python -m app.cli 1` | Fetch by problem number |
 | `python -m app.cli two-sum` | Fetch by title slug |
 | `python -m app.cli export` | Export solved problems to Obsidian |
+| `python -m app.cli solutions 1` | Fetch top-voted community solutions for a problem (coach reference material; `--top N` to adjust count) |
 
 ## API
 
-`GET /api/daily` · `GET /api/problem/{id|slug}` · `GET /api/problems` · `GET /api/problems/{id}/note` · `GET /api/stats` · `GET /api/review` · `POST /api/export`
+`GET /api/daily` · `GET /api/problem/{id|slug}` · `GET /api/problems` · `GET /api/problem/{id|slug}/solutions` · `GET /api/problems/{id}/note` · `GET /api/stats` · `GET /api/review` · `POST /api/export`
+
+> ⚠️ Both the problem-fetching and community-solutions endpoints are **unofficial** (undocumented LeetCode GraphQL) — fine for personal, low-frequency use, but they may change or get rate-limited at any time. A failed fetch degrades gracefully (the section is just skipped) rather than breaking the analysis.
 
 ## Tests
 

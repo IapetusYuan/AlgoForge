@@ -32,7 +32,7 @@ LeetCode GraphQL ──► Backend (Python / FastAPI) ──► Markdown 筆記 
 ```
 
 - **後端** —— FastAPI 代理 LeetCode GraphQL（避開 CORS），把題目存成 Markdown stub
-- **教練 agent** —— Claude Code 填寫 8 段教學分析
+- **教練 agent** —— Claude Code 填寫 9 段教學分析（含選讀的社群解法對照）
 - **儀表板** —— 題目清單、模式篩選、筆記渲染、複雜度膠囊、統計與間隔複習佇列
 - **知識庫匯出** —— 把已解題目變成 Obsidian wiki（題目 ↔ 模式雙向連結）
 
@@ -45,10 +45,11 @@ AlgoForge/
 │   ├── htmlmd.py       #   HTML → Markdown
 │   ├── storage.py      #   stub 存檔 + index 同步 + 統計/複習
 │   ├── obsidian.py     #   匯出 Obsidian 知識庫
+│   ├── solutions.py    #   抓討論區高票解法（教練參考素材）
 │   ├── main.py         #   REST API + serve 前端
-│   └── cli.py          #   命令列抓題 / 匯出
+│   └── cli.py          #   命令列抓題 / 匯出 / 社群解法
 ├── frontend/           # Web 儀表板（無 build step）
-├── templates/          # 8 段筆記模板
+├── templates/          # 9 段筆記模板
 ├── examples/           # 精選範例分析（Two Sum）
 ├── .claude/agents/     # algoforge-coach 解題教練 agent ⭐
 └── data/problems/      # 你自己的解題分析（gitignore）
@@ -76,10 +77,13 @@ python -m app.cli export           # 匯出已解題目成 Obsidian wiki
 | `python -m app.cli 1` | 用題號抓 |
 | `python -m app.cli two-sum` | 用 title slug 抓 |
 | `python -m app.cli export` | 匯出已解題目到 Obsidian |
+| `python -m app.cli solutions 1` | 抓該題討論區高票解法（教練參考素材，`--top N` 調數量） |
 
 ## API
 
-`GET /api/daily` · `GET /api/problem/{id|slug}` · `GET /api/problems` · `GET /api/problems/{id}/note` · `GET /api/stats` · `GET /api/review` · `POST /api/export`
+`GET /api/daily` · `GET /api/problem/{id|slug}` · `GET /api/problems` · `GET /api/problem/{id|slug}/solutions` · `GET /api/problems/{id}/note` · `GET /api/stats` · `GET /api/review` · `POST /api/export`
+
+> ⚠️ 抓題與社群解法都是**非官方 API**（LeetCode 未公開文件的 GraphQL endpoint），僅供個人低頻使用；endpoint 可能隨時變動，抓不到時會優雅降級（略過該段）而非報錯中斷。
 
 ## 測試
 

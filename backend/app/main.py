@@ -11,7 +11,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from . import leetcode, obsidian, storage
+from . import leetcode, obsidian, solutions, storage
 
 FRONTEND_DIR = Path(__file__).resolve().parents[2] / "frontend"
 
@@ -86,6 +86,20 @@ async def export() -> dict:
         return obsidian.export_to_vault()
     except Exception as e:  # noqa: BLE001
         raise HTTPException(status_code=500, detail=f"匯出失敗：{e}") from e
+
+
+@app.get("/api/problem/{identifier}/solutions")
+async def problem_solutions(identifier: str, top: int = 5) -> dict:
+    """抓某題社群高票解法（Solutions 區），當儀表板／教練的參考素材。
+
+    非官方 API，僅代理轉發、不落地存原文；抓不到就回空清單，不視為錯誤。
+    """
+    try:
+        slug = identifier if not identifier.isdigit() else await leetcode.resolve_slug_by_id(identifier)
+        picks = await solutions.fetch_top_solutions(slug, top=top)
+    except (leetcode.LeetCodeError, solutions.SolutionsError):
+        picks = []
+    return {"identifier": identifier, "solutions": picks}
 
 
 @app.get("/api/problems/{problem_id}/note")
