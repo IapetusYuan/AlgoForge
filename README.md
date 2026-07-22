@@ -11,6 +11,8 @@ AlgoForge fetches the LeetCode daily problem (or any problem you pick), and a Cl
 
 > 📄 See real output in [`examples/`](./examples) — e.g. [Two Sum](./examples/1-two-sum.md), or [GCD of Odd and Even Sums](./examples/3658-gcd-of-odd-and-even-sums.md) for the community solution comparison section in action.
 
+![The community solution comparison section rendered in the dashboard — top community pick, an alternative approach, and the clearest write-up, each with a one-line takeaway and a link to the source](./docs/community-solutions.png)
+
 ## Why it's different
 
 - **Teaches the approach, not just the answer** — reconstructs how a strong solver's mind moves: signals → ruled-out paths → why it converges on this solution.

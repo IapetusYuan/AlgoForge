@@ -11,6 +11,8 @@ AlgoForge 會抓 LeetCode 每日一題（或你指定的任何題），由一個
 
 > 📄 實際產出見 [`examples/`](./examples)：例如 [Two Sum](./examples/1-two-sum.md)，或看 [GCD of Odd and Even Sums](./examples/3658-gcd-of-odd-and-even-sums.md) 展示第 9 段「社群解法對照」實際效果。
 
+![儀表板渲染的社群解法對照段落 —— 社群主流解、另一種取向、講得最好的一篇，各附一句話重點與原文連結](./docs/community-solutions.png)
+
 ## 為什麼不一樣
 
 - **教切入法，不只給答案** —— 重現一個強解題者腦中怎麼推進：訊號 → 排除的方向 → 為何收斂到這解法
