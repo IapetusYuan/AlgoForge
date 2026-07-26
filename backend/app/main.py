@@ -14,6 +14,7 @@ from fastapi.staticfiles import StaticFiles
 from . import leetcode, obsidian, solutions, storage
 
 FRONTEND_DIR = Path(__file__).resolve().parents[2] / "frontend"
+ASSETS_DIR = Path(__file__).resolve().parents[2] / "assets"
 
 app = FastAPI(title="AlgoForge API", version="0.1.0")
 
@@ -110,6 +111,10 @@ async def problem_note(problem_id: str) -> dict:
         raise HTTPException(status_code=404, detail=f"找不到題號 {problem_id} 的筆記")
     return {"id": problem_id, "markdown": note}
 
+
+# 筆記裡的圖示用絕對路徑 /assets/icons/... 引用（GitHub 上也是 repo-root-relative）
+if ASSETS_DIR.exists():
+    app.mount("/assets", StaticFiles(directory=ASSETS_DIR), name="assets")
 
 # 前端儀表板（S3）— 掛在最後，API 路由優先匹配
 if FRONTEND_DIR.exists():

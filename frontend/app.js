@@ -156,7 +156,7 @@ async function showStats() {
   try {
     const s = await (await fetch(`${API}/api/stats`)).json();
     reader.innerHTML = `<div class="panel">
-      <h1>📊 刷題統計</h1>
+      <h1><img src="/assets/icons/chart-column.svg" width="22" height="22" alt="" style="vertical-align:-4px"> 刷題統計</h1>
       <p class="muted">已累積 <strong>${s.total}</strong> 題。</p>
       ${bars('依難度', s.by_difficulty, 'fill-')}
       ${bars('依狀態', s.by_status, 'fill-')}
@@ -174,7 +174,7 @@ function reviewItem(it, isDue) {
       <div style="font-weight:600">#${it.id} ${it.title}</div>
       <div style="font-size:12px;color:var(--muted)">${(it.patterns || []).join(' · ')}</div>
     </div>
-    <span class="rdate">${isDue ? '⏰ ' : ''}${it.revisit}</span>
+    <span class="rdate">${isDue ? '<img src="/assets/icons/alarm-clock.svg" width="13" height="13" alt="" style="vertical-align:-2px"> ' : ''}${it.revisit}</span>
   </div>`;
 }
 
@@ -185,11 +185,11 @@ async function showReview() {
   try {
     const r = await (await fetch(`${API}/api/review`)).json();
     const dueHtml = r.due.length ? r.due.map(it => reviewItem(it, true)).join('')
-      : '<p class="section-empty">目前沒有到期的複習題 🎉</p>';
+      : '<p class="section-empty"><img src="/assets/icons/circle-check-big.svg" width="14" height="14" alt="" style="vertical-align:-2px"> 目前沒有到期的複習題</p>';
     const upHtml = r.upcoming.length ? r.upcoming.map(it => reviewItem(it, false)).join('')
       : '<p class="section-empty">尚無排定的複習。</p>';
     reader.innerHTML = `<div class="panel">
-      <h1>🔁 複習佇列</h1>
+      <h1><img src="/assets/icons/repeat.svg" width="22" height="22" alt="" style="vertical-align:-4px"> 複習佇列</h1>
       <p class="muted">今天：${r.today}（題目筆記 frontmatter 的 <code>revisit</code> 日期到了就出現在「到期」）</p>
       <h2>到期（該複習了）</h2>${dueHtml}
       <h2>即將複習</h2>${upHtml}

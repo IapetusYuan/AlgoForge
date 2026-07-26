@@ -146,6 +146,6 @@ public:
 
 ## 9. 社群解法對照
 
-- **🏆 社群主流解**：五篇高票解法在核心結論上完全一致——`sumOdd = n²`、`sumEven = n(n+1)`，兩者的 GCD 恆等於 `n`，因此最簡潔寫法就是直接 `return n;`，社群共識與本解法相同。[查看原文](https://leetcode.com/problems/gcd-of-odd-and-even-sums/solutions/7115082/)
-- **⚡ 另一種取向**：LeadingTheAbyss 的解法選擇「保守派」寫法——先算出 `sumOdd`、`sumEven` 兩個實際數值，再呼叫內建 `gcd()` 函式做真正的輾轉相除法，而非直接推導成 `n`；效能上仍是 `O(log n)` 級別、幾乎沒有差別，但這種寫法更貼近題目字面、對還沒把握「相鄰整數互質」證明的人來說更保險，也留下驗證原始邏輯的痕跡。[查看原文](https://leetcode.com/problems/gcd-of-odd-and-even-sums/solutions/7115094/)
-- **💡 講得最好的一篇**：rosvert 的「Why return n works?」用最精簡的五步驟代數推導（求和公式 → 提出公因子 `n` → 指出 `n` 與 `n+1` 互質 → 結論恆為 `n`），邏輯清楚、沒有廢話，最適合拿來當這題的標準推導範本。[查看原文](https://leetcode.com/problems/gcd-of-odd-and-even-sums/solutions/8397686/)
+- **<img src="/assets/icons/trophy.svg" width="16" height="16" alt="trophy" style="vertical-align:-3px"> 社群主流解**：五篇高票解法在核心結論上完全一致——`sumOdd = n²`、`sumEven = n(n+1)`，兩者的 GCD 恆等於 `n`，因此最簡潔寫法就是直接 `return n;`，社群共識與本解法相同。[查看原文](https://leetcode.com/problems/gcd-of-odd-and-even-sums/solutions/7115082/)
+- **<img src="/assets/icons/zap.svg" width="16" height="16" alt="zap" style="vertical-align:-3px"> 另一種取向**：LeadingTheAbyss 的解法選擇「保守派」寫法——先算出 `sumOdd`、`sumEven` 兩個實際數值，再呼叫內建 `gcd()` 函式做真正的輾轉相除法，而非直接推導成 `n`；效能上仍是 `O(log n)` 級別、幾乎沒有差別，但這種寫法更貼近題目字面、對還沒把握「相鄰整數互質」證明的人來說更保險，也留下驗證原始邏輯的痕跡。[查看原文](https://leetcode.com/problems/gcd-of-odd-and-even-sums/solutions/7115094/)
+- **<img src="/assets/icons/lightbulb.svg" width="16" height="16" alt="lightbulb" style="vertical-align:-3px"> 講得最好的一篇**：rosvert 的「Why return n works?」用最精簡的五步驟代數推導（求和公式 → 提出公因子 `n` → 指出 `n` 與 `n+1` 互質 → 結論恆為 `n`），邏輯清楚、沒有廢話，最適合拿來當這題的標準推導範本。[查看原文](https://leetcode.com/problems/gcd-of-odd-and-even-sums/solutions/8397686/)

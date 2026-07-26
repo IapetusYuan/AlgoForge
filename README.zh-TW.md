@@ -1,4 +1,4 @@
-# AlgoForge 🔥
+# AlgoForge <img src="/assets/icons/flame.svg" width="28" height="28" alt="flame" style="vertical-align:-4px">
 
 [English](./README.md) | **繁體中文**
 
@@ -9,7 +9,7 @@ AlgoForge 會抓 LeetCode 每日一題（或你指定的任何題），由一個
 
 ![AlgoForge 儀表板 —— 左側題庫清單與模式標籤，右側是渲染後的教學式分析與時間／空間複雜度膠囊](./docs/dashboard.png)
 
-> 📄 實際產出見 [`examples/`](./examples)：例如 [Two Sum](./examples/1-two-sum.md)，或看 [GCD of Odd and Even Sums](./examples/3658-gcd-of-odd-and-even-sums.md) 展示第 9 段「社群解法對照」實際效果。
+> <img src="/assets/icons/file-text.svg" width="16" height="16" alt="" style="vertical-align:-3px"> 實際產出見 [`examples/`](./examples)：例如 [Two Sum](./examples/1-two-sum.md)，或看 [GCD of Odd and Even Sums](./examples/3658-gcd-of-odd-and-even-sums.md) 展示第 9 段「社群解法對照」實際效果。
 
 ![儀表板渲染的社群解法對照段落 —— 社群主流解、另一種取向、講得最好的一篇，各附一句話重點與原文連結](./docs/community-solutions.png)
 
@@ -53,6 +53,7 @@ AlgoForge/
 ├── frontend/           # Web 儀表板（無 build step）
 ├── templates/          # 9 段筆記模板
 ├── examples/           # 精選範例分析（Two Sum）
+├── assets/icons/       # MIT 授權線稿圖示（Lucide），由 /assets 提供
 ├── .claude/agents/     # algoforge-coach 解題教練 agent ⭐
 └── data/problems/      # 你自己的解題分析（gitignore）
 ```

@@ -29,7 +29,7 @@ body {
   background: rgba(250,247,242,.95); position: sticky; top: 0; z-index: 20;
 }
 .brand { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 26px; color: var(--brown); letter-spacing: .5px; }
-.flame { font-size: 20px; }
+.flame { vertical-align: -3px; }
 .tagline { color: var(--muted); font-style: italic; font-size: 14px; flex: 1; }
 .btn {
   font-family: inherit; font-weight: 600; font-size: 14px; cursor: pointer;

@@ -1,4 +1,4 @@
-# AlgoForge 🔥
+# AlgoForge <img src="/assets/icons/flame.svg" width="28" height="28" alt="flame" style="vertical-align:-4px">
 
 **English** | [繁體中文](./README.zh-TW.md)
 
@@ -9,7 +9,7 @@ AlgoForge fetches the LeetCode daily problem (or any problem you pick), and a Cl
 
 ![AlgoForge dashboard — problem list with pattern tags on the left, and a rendered teaching analysis with time/space complexity pills on the right](./docs/dashboard.png)
 
-> 📄 See real output in [`examples/`](./examples) — e.g. [Two Sum](./examples/1-two-sum.md), or [GCD of Odd and Even Sums](./examples/3658-gcd-of-odd-and-even-sums.md) for the community solution comparison section in action.
+> <img src="/assets/icons/file-text.svg" width="16" height="16" alt="" style="vertical-align:-3px"> See real output in [`examples/`](./examples) — e.g. [Two Sum](./examples/1-two-sum.md), or [GCD of Odd and Even Sums](./examples/3658-gcd-of-odd-and-even-sums.md) for the community solution comparison section in action.
 
 ![The community solution comparison section rendered in the dashboard — top community pick, an alternative approach, and the clearest write-up, each with a one-line takeaway and a link to the source](./docs/community-solutions.png)
 
@@ -53,6 +53,7 @@ AlgoForge/
 ├── frontend/           # web dashboard (no build step)
 ├── templates/          # the 9-section note template
 ├── examples/           # a curated sample analysis (Two Sum)
+├── assets/icons/       # MIT-licensed line icons (Lucide), served at /assets
 ├── .claude/agents/     # the algoforge-coach agent ⭐
 └── data/problems/      # your own analyses (gitignored)
 ```
