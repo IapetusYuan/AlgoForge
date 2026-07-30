@@ -20,7 +20,7 @@ AlgoForge fetches the LeetCode daily problem (or any problem you pick), and a Cl
 - **Honest brute force first** — shows the naive solution, points out where it wastes work, *then* motivates the optimization.
 - **Generalizes to patterns** — every problem is filed under a reusable pattern so you recognize it next time.
 
-## The coach agent ⭐
+## The coach agent <img src="/assets/icons/star.svg" width="16" height="16" alt="star" style="vertical-align:-3px">
 
 The heart of AlgoForge is [`.claude/agents/algoforge-coach.md`](./.claude/agents/algoforge-coach.md) — a Claude Code subagent encoding the teaching rules above. Drop it into any Claude Code project and ask it to analyze a problem.
 
@@ -54,7 +54,7 @@ AlgoForge/
 ├── templates/          # the 9-section note template
 ├── examples/           # a curated sample analysis (Two Sum)
 ├── assets/icons/       # MIT-licensed line icons (Lucide), served at /assets
-├── .claude/agents/     # the algoforge-coach agent ⭐
+├── .claude/agents/     # the algoforge-coach agent <img src="/assets/icons/star.svg" width="16" height="16" alt="star" style="vertical-align:-3px">
 └── data/problems/      # your own analyses (gitignored)
 ```
 

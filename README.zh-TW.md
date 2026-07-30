@@ -20,7 +20,7 @@ AlgoForge 會抓 LeetCode 每日一題（或你指定的任何題），由一個
 - **誠實先講暴力解** —— 先給天真解、點出哪裡浪費，**再**引出優化動機
 - **歸納成模式** —— 每題掛到可複用模式，下次看到就認得
 
-## 核心：解題教練 agent ⭐
+## 核心：解題教練 agent <img src="/assets/icons/star.svg" width="16" height="16" alt="star" style="vertical-align:-3px">
 
 AlgoForge 的靈魂是 [`.claude/agents/algoforge-coach.md`](./.claude/agents/algoforge-coach.md) —— 一個把上述教學規則寫成的 Claude Code subagent。丟進任何 Claude Code 專案，叫它分析一題即可。
 
@@ -54,7 +54,7 @@ AlgoForge/
 ├── templates/          # 9 段筆記模板
 ├── examples/           # 精選範例分析（Two Sum）
 ├── assets/icons/       # MIT 授權線稿圖示（Lucide），由 /assets 提供
-├── .claude/agents/     # algoforge-coach 解題教練 agent ⭐
+├── .claude/agents/     # algoforge-coach 解題教練 agent <img src="/assets/icons/star.svg" width="16" height="16" alt="star" style="vertical-align:-3px">
 └── data/problems/      # 你自己的解題分析（gitignore）
 ```
 

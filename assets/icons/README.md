@@ -14,5 +14,6 @@
 | `folder-open.svg` | 儀表板 — 未選題的空狀態 |
 | `flame.svg` | AlgoForge 品牌標誌 |
 | `file-text.svg` | README — 範例文件連結 |
+| `star.svg` | README — 解題教練 agent 標記 |
 
 ISC License 全文見 <https://github.com/lucide-icons/lucide/blob/main/LICENSE>。
